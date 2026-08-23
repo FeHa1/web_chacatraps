@@ -45,16 +45,8 @@ const BIO = [
 const CONTACT = {
   instagram: { label: '@3d2.chacatrap', url: 'https://www.instagram.com/3d2.chacatrap/' },
   whatsapp: { label: '+54 9 11 3244-4769', url: 'https://wa.me/5491132444769' },
-  email: { label: 'contacto@loschacatraps.com', url: 'mailto:contacto@loschacatraps.com' }, // cambiar por el email real despues de que me lo digan
+  email: { label: 'chacatrap@gmail.com', url: 'mailto:chacatrap@gmail.com' }, 
 }
-
-// Integrantes placeholder — reemplazar nombre/rol/inicial por los reales.
-const MEMBERS = [
-  { name: 'Nombre Apellido', role: 'Voz / Guitarra', initial: 'V' },
-  { name: 'Nombre Apellido', role: 'Bajo', initial: 'B' },
-  { name: 'Nombre Apellido', role: 'Batería', initial: 'D' },
-  { name: 'Nombre Apellido', role: 'Sintetizadores', initial: 'S' },
-]
 
 export default function About() {
   return (
