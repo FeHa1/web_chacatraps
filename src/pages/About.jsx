@@ -46,6 +46,7 @@ const CONTACT = {
   instagram: { label: '@3d2.chacatrap', url: 'https://www.instagram.com/3d2.chacatrap/' },
   whatsapp: { label: '+54 9 11 3244-4769', url: 'https://wa.me/5491132444769' },
   email: { label: 'chacatrap@gmail.com', url: 'mailto:chacatrap@gmail.com' }, 
+  tiktok: { label: '@3d2.chacatrap', url: 'https://www.tiktok.com/@3d2.chacatrap' }, 
 }
 
 export default function About() {
