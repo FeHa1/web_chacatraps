@@ -73,28 +73,6 @@ export default function About() {
           className="section-title"
           style={{ fontSize: '1.4rem', marginBottom: '0.5rem' }}
         >
-          Integrantes
-        </h2>
-
-        <div className="members-grid">
-          {MEMBERS.map((member) => (
-            <div
-              className="card member-card"
-              key={member.name + member.role}
-            >
-              <div className="member-avatar">{member.initial}</div>
-              <div className="member-name">{member.name}</div>
-              <div className="member-role">{member.role}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2
-          className="section-title"
-          style={{ fontSize: '1.4rem', marginBottom: '0.5rem' }}
-        >
           Contacto
         </h2>
 
