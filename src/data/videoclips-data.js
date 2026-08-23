@@ -23,16 +23,16 @@
 export const VIDEOCLIPS = [
   {
     id: 'placeholder-clip-1',
-    title: 'Nombre de la canción — Videoclip oficial',
+    title: '3D2 CHACATRAP - RANDOM',
     platform: 'youtube',
     // Placeholder: reemplazar por el embed real (ver instrucciones arriba).
-    embedUrl: 'https://www.youtube.com/embed/M7lc1UVf-VE',
+    embedUrl: 'https://www.youtube.com/embed/-eboV96gBxU?si=LPXT0_zvPeIKsOh0',
   },
   {
     id: 'placeholder-clip-2',
-    title: 'Nombre de la canción — Lyric video',
+    title: '3D2 CHACATRAP - LA MOTO',
     platform: 'youtube',
     // Placeholder: reemplazar por el embed real (ver instrucciones arriba).
-    embedUrl: 'https://www.youtube.com/embed/M7lc1UVf-VE',
+    embedUrl: 'https://www.youtube.com/embed/cnG9NdOaogU?si=fZV9w99Qas8PcMn6',
   },
 ]
