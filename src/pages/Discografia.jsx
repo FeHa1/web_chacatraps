@@ -4,7 +4,7 @@ import BackToMenu from '../components/BackToMenu.jsx'
 // Reemplazar por el link real del perfil/artista de Spotify de la banda.
 // Para conseguir el link de embed: en Spotify, "Compartir" -> "Insertar
 // aplicación" (Embed), y copiar la URL que está dentro del atributo src.
-const SPOTIFY_EMBED_URL = 'https://open.spotify.com/embed/artist/0LcJLqbBmaGUft1e9Mm8HV?utm_source=generator&theme=0'
+const SPOTIFY_EMBED_URL = 'https://open.spotify.com/embed/artist/3b43OYPshnGoPpr8bckZNA?utm_source=generator&si=03f5c13de21d40f8>'
 
 export default function Discografia() {
   return (
@@ -17,8 +17,7 @@ export default function Discografia() {
       </header>
 
       <p className="prose">
-        Todo nuestro catálogo, en vivo desde Spotify. (Placeholder: reemplazar el embed
-        de abajo por el perfil real de la banda cuando esté disponible.)
+        Todo nuestro catálogo, en vivo desde Spotify. 
       </p>
 
       <div className="embed-wrap">
