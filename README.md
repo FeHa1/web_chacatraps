@@ -41,13 +41,14 @@ src/
 
 ## Actualizar contenido (sin tocar código)
 
-- **Shows en vivo**: editar `src/data/shows-data.js`. Instrucciones paso a
-  paso están en el comentario de arriba de ese archivo.
+- **Fotos y video de shows en vivo**: poner el archivo en
+  `src/assets/FormatoEnVivo/` y agregarlo en `src/data/formato-en-vivo-media.js`
+  (instrucciones paso a paso en el comentario de arriba de ese archivo).
 - **Videoclips**: editar `src/data/videoclips-data.js`.
 - **Discografía (Spotify)**: cambiar el link `SPOTIFY_EMBED_URL` en
   `src/pages/Discografia.jsx`.
-- **Contacto / integrantes**: editar los arrays `CONTACT` y `MEMBERS` en
-  `src/pages/About.jsx`.
+- **Biografía**: editar el array `BIO` en `src/pages/About.jsx`.
+- **Contacto**: editar el array `CONTACT` en `src/pages/About.jsx`.
 
 ## Notas
 

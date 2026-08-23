@@ -1,19 +1,16 @@
+import { useState } from 'react'
 import PageShell from '../components/PageShell.jsx'
 import BackToMenu from '../components/BackToMenu.jsx'
-import { getSortedShows } from '../data/shows-data.js'
-
-// Formatea "YYYY-MM-DD" a algo mas legible sin depender de librerias externas.
-function formatDate(isoDate) {
-  const [year, month, day] = isoDate.split('-')
-  const months = [
-    'ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN',
-    'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC',
-  ]
-  return `${day} ${months[Number(month) - 1]} ${year}`
-}
+import Lightbox from '../components/Lightbox.jsx'
+import { PHOTOS, VIDEOS } from '../data/formato-en-vivo-media.js'
 
 export default function FormatoEnVivo() {
-  const shows = getSortedShows()
+  const [openIndex, setOpenIndex] = useState(null)
+
+  const openAt = (index) => setOpenIndex(index)
+  const close = () => setOpenIndex(null)
+  const goPrev = () => setOpenIndex((i) => (i - 1 + PHOTOS.length) % PHOTOS.length)
+  const goNext = () => setOpenIndex((i) => (i + 1) % PHOTOS.length)
 
   return (
     <PageShell>
@@ -24,41 +21,36 @@ export default function FormatoEnVivo() {
         <h1 className="section-title glow-cyan">Shows</h1>
       </header>
 
-      {shows.length === 0 ? (
-        <p className="gallery-empty">Próximamente: fotos y videos de nuestros shows en vivo.</p>
-      ) : (
+      {PHOTOS.length > 0 && (
         <div className="gallery-grid">
-          {shows.map((show) => (
-            <article className="card gallery-item" key={show.id}>
-              {show.photoUrl ? (
-                <img className="gallery-item__media" src={show.photoUrl} alt={show.title} />
-              ) : (
-                <div className="gallery-item__media" />
-              )}
-              <div className="gallery-item__body">
-                <div className="gallery-item__date">{formatDate(show.date)}</div>
-                <h3 className="gallery-item__title">{show.title}</h3>
-                <div className="gallery-item__venue">{show.venue}</div>
-
-                {show.videos.length > 0 && (
-                  <div className="contact-list" style={{ marginTop: '0.9rem' }}>
-                    {show.videos.map((video) => (
-                      <a
-                        key={video.url + video.label}
-                        className="contact-pill"
-                        href={video.url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        ▶ {video.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </article>
+          {PHOTOS.map((photo, i) => (
+            <button
+              type="button"
+              className="gallery-photo"
+              key={photo}
+              onClick={() => openAt(i)}
+              aria-label={`Ver foto ${i + 1}`}
+            >
+              <img className="gallery-photo__img" src={photo} alt="" loading="lazy" />
+            </button>
           ))}
         </div>
+      )}
+
+      {VIDEOS.length > 0 && (
+        <div className="video-native-grid">
+          {VIDEOS.map((video) => (
+            <video key={video} className="video-native" src={video} controls playsInline />
+          ))}
+        </div>
+      )}
+
+      {PHOTOS.length === 0 && VIDEOS.length === 0 && (
+        <p className="gallery-empty">Próximamente: fotos y videos de nuestros shows en vivo.</p>
+      )}
+
+      {openIndex !== null && (
+        <Lightbox photos={PHOTOS} index={openIndex} onClose={close} onPrev={goPrev} onNext={goNext} />
       )}
     </PageShell>
   )
