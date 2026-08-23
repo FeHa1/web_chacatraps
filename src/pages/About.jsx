@@ -91,6 +91,15 @@ export default function About() {
           <a className="contact-pill" href={CONTACT.email.url}>
             Mail — {CONTACT.email.label}
           </a>
+
+          <a
+            className="contact-pill"
+            href={CONTACT.tiktok.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            TikTok — {CONTACT.tiktok.label}
+          </a>
         </div>
       </section>
     </PageShell>
