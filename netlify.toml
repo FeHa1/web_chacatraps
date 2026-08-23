@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirige todas las rutas a index.html para que React Router
+# maneje el ruteo del lado del cliente (evita 404 de Netlify
+# al refrescar /about, /discografia, etc.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
