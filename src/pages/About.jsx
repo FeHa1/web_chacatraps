@@ -3,9 +3,9 @@ import BackToMenu from '../components/BackToMenu.jsx'
 
 // Datos de contacto placeholder — reemplazar por los reales de la banda.
 const CONTACT = {
-  instagram: { label: '@loschacatraps', url: 'https://instagram.com/' },
-  whatsapp: { label: '+54 9 11 0000-0000', url: 'https://wa.me/5491100000000' },
-  email: { label: 'contacto@loschacatraps.com', url: 'mailto:contacto@loschacatraps.com' },
+  instagram: { label: '@3d2.chacatrap', url: 'https://www.instagram.com/3d2.chacatrap/' },
+  whatsapp: { label: '+54 9 11 3244-4769', url: 'https://wa.me/5491132444769' },
+  email: { label: 'contacto@loschacatraps.com', url: 'mailto:contacto@loschacatraps.com' }, // cambiar por el email real despues de que me lo digan
 }
 
 // Integrantes placeholder — reemplazar nombre/rol/inicial por los reales.
