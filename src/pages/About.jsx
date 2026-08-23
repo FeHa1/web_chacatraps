@@ -28,17 +28,44 @@ export default function About() {
 
       <div className="prose">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Los Chacatraps nacieron
-          de la fusión entre sintetizadores analógicos y guitarras distorsionadas, buscando
-          un sonido que combine la nostalgia de los 80s con una energía completamente actual.
-          Este es un texto de ejemplo (placeholder) — reemplazar por la historia real de la banda.
+          3D2 CHACATRAP es un proyecto musical argentino nacido en 2021 que fusiona géneros folclóricos tradicionales con lenguajes urbanos contemporáneos como el 
+          trap y la electrónica, construyendo un puente entre raíz y vanguardia.
         </p>
         <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Desde sus primeros ensayos hasta los escenarios más
-          under de la escena local, la banda fue construyendo una identidad propia dentro
-          del synthwave y el rock electrónico.
+          El grupo está integrado por Martín Pla (PLA), Joel Eis (Monxio) y Juan Sánchez (OWANI), músicos con formación académica y trayectoria en la escena independiente. 
+          Desde sus inicios desarrolla una identidad artística que combina producción musical, performance escénica y una marcada impronta audiovisual.
         </p>
+        <p>
+          En 2021 lanza su primer single, “By3 By3 By3”, estableciendo el cruce entre zamba y trap como punto de partida estético. En 2022 presenta CMF y realiza su primer 
+          show en vivo en el Club Cultural 911 (CABA), iniciando un recorrido sostenido por escenarios de todo el país.
+        </p>
+        <p>
+          Durante 2023 impulsa el Ciclo Chacatrap, un espacio mensual de programación artística dedicado a proyectos que exploran cruces entre folclore y música urbana, 
+          consolidando una red de artistas y ampliando el alcance de esta búsqueda estética.
+        </p>
+        <p>
+          En 2024 fortalece su presencia en escenarios estratégicos como CAMPING, Club Lucille y La Paz Arriba, consolidando una propuesta multidisciplinaria que integra 
+          instrumentos en vivo, secuencias electrónicas y una fuerte dimensión performática.
+        </p>
+        <p> 
+          A comienzos de 2025 realiza su primera gira patagónica con presentaciones en Neuquén, San Martín de los Andes y Bariloche, ampliando su circulación federal. 
+          Ese mismo año estrena los singles La Moto y Random, ambos acompañados de videoclips, y se presenta en salas relevantes como La Tangente y El Morán (CABA), además de espacios destacados de La Plata como Ciudad de Gatos y Pura Vida.
+        </p>
+        <p>
+          En 2026 el proyecto se presenta en Córdoba en los espacios Bela y Un Mundo Feliz y regresa a Neuquén para participar del Festival Festinicho. 
+          Ese mismo año crea Jardín Encantado, una serie de sesiones audiovisuales en vivo que convoca a artistas de distintas escenas para generar colaboraciones y nuevas 
+          versiones en un formato íntimo. El ciclo amplía el universo artístico de CHACATRAP, fortalece el intercambio entre músicos y consolida la presencia digital del 
+          proyecto mediante contenidos audiovisuales de alta calidad.
+        </p>
+        <p>
+          Actualmente, 3D2 CHACATRAP se encuentra finalizando su primer disco de estudio, con lanzamiento previsto para noviembre de 2026. 
+          En paralelo, proyecta su inserción en circuitos internacionales, consolidando un lenguaje propio dentro de la música popular contemporánea argentina.
+          El proyecto propone una resignificación del folclore desde una perspectiva actual, performática y urbana, articulando tradición, tecnología y escena independiente.
+        </p>
+      </div>
+    </PageShell>
+  )
+}
       </div>
 
       <section>
