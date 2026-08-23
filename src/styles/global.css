@@ -333,6 +333,108 @@ h3 {
   transform: translateY(-2px);
 }
 
+/* Biografía tipo línea de tiempo (About) */
+.bio-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 68ch;
+}
+
+.bio-timeline__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.bio-timeline__arrow {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: rgba(10, 8, 24, 0.5);
+  color: var(--color-cyan-soft);
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bio-timeline__arrow:hover:not(:disabled),
+.bio-timeline__arrow:focus-visible:not(:disabled) {
+  color: var(--color-bg);
+  background: var(--color-cyan-soft);
+  border-color: var(--color-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.bio-timeline__arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.bio-timeline__content {
+  flex: 1;
+  min-width: 0;
+  min-height: 200px;
+}
+
+.bio-timeline__year {
+  display: inline-block;
+  font-family: var(--font-heading);
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+  margin-bottom: 0.7em;
+}
+
+.bio-timeline__text {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.bio-timeline__dots {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bio-timeline__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bio-timeline__dot:hover {
+  border-color: var(--color-cyan);
+}
+
+.bio-timeline__dot--active {
+  background: var(--color-magenta-soft);
+  border-color: var(--color-magenta);
+  box-shadow: var(--glow-magenta);
+}
+
+.bio-timeline__counter {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-dim);
+}
+
 .members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -564,5 +666,19 @@ h3 {
 
   .menu-option {
     padding: 0.85em 1.1em;
+  }
+
+  .bio-timeline__arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+  }
+
+  .bio-timeline__text {
+    font-size: 1.1rem;
+  }
+
+  .bio-timeline__row {
+    gap: var(--space-1);
   }
 }
