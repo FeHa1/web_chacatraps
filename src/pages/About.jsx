@@ -22,7 +22,7 @@ const MEMBERS = [
     birthDate: '1994-06-18', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
     instagram: { label: '@plaxorelaxo', url: 'https://www.instagram.com/plaxorelaxo/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
-    gifUrl: null, // TODO: '/integrantes/pla.gif' una vez que subas el archivo
+    gifUrl: '/integrantes/pla.gif', // TODO: '/integrantes/pla.gif' una vez que subas el archivo
   },
   {
     name: 'Joel Eis Gonzalez Farkas', // TODO: confirmar nombre completo
@@ -30,7 +30,7 @@ const MEMBERS = [
     birthDate: '1993-09-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
     instagram: { label: '@monxi0', url: 'https://www.instagram.com/monxi0/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
-    gifUrl: null, // TODO: '/integrantes/monxio.gif' una vez que subas el archivo
+    gifUrl: '/integrantes/monxi0.gif', // TODO: '/integrantes/monxio.gif' una vez que subas el archivo
   },
   {
     name: 'Juan Ignacio Sánchez', // TODO: confirmar nombre completo
@@ -38,7 +38,7 @@ const MEMBERS = [
     birthDate: '1991-09-27', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
     instagram: { label: '@juanetesanchez', url: 'https://www.instagram.com/juanetesanchez/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
-    gifUrl: null, // TODO: '/integrantes/owani.gif' una vez que subas el archivo
+    gifUrl: '/integrantes/juani.gif', // TODO: '/integrantes/owani.gif' una vez que subas el archivo
   },
 ]
 
