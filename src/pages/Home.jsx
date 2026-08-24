@@ -23,6 +23,8 @@ export default function Home() {
       transition={{ duration: 0.4 }}
     >
       <div>
+        {/* Placeholder de prueba: si no convence, sacar este <img> y listo. */}
+        <img className="home-logo-gif" src="/home/chacatraps.gif" alt="" />
         <h1 className="home-title">LOS CHACATRAPS</h1>
         <p className="home-subtitle">PRESS START</p>
       </div>

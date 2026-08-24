@@ -192,6 +192,13 @@ h3 {
   gap: var(--space-4);
 }
 
+.home-logo-gif {
+  display: block;
+  width: clamp(140px, 22vw, 260px);
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 0 18px rgba(255, 46, 230, 0.45)) drop-shadow(0 0 32px rgba(35, 242, 255, 0.25));
+}
+
 .home-title {
   font-size: clamp(2.6rem, 9vw, 6rem);
   color: var(--color-magenta-soft);
