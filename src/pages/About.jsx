@@ -1,11 +1,47 @@
 import PageShell from '../components/PageShell.jsx'
 import BackToMenu from '../components/BackToMenu.jsx'
 import BioTimeline from '../components/BioTimeline.jsx'
+import MemberCard from '../components/MemberCard.jsx'
 
-// Biografía en formato línea de tiempo: cada objeto es un capítulo que se
-// navega con las flechas en la página. Para agregar/editar un capítulo,
-// alcanza con agregar/editar un objeto acá (year = etiqueta corta, text =
-// párrafo completo).
+/**
+ * Integrantes — se muestran como cartas que se dan vuelta al tocarlas
+ * (frente: GIF + nombre / dorso: nombre completo, edad, habilidades e
+ * Instagram). Para agregar el GIF de cada uno:
+ *   1. Poné el archivo .gif en la carpeta public/integrantes/
+ *      (crear la carpeta si todavía no existe).
+ *   2. Completá "gifUrl" acá abajo con "/integrantes/nombre-del-archivo.gif".
+ * Mientras no haya GIF, la carta muestra un círculo con la inicial.
+ *
+ * La edad se calcula sola a partir de "birthDate" (formato YYYY-MM-DD), así
+ * que una vez que la cargues correctamente nunca más hay que tocarla.
+ */
+const MEMBERS = [
+  {
+    name: 'Martín Pla', // TODO: confirmar nombre completo
+    stageName: 'PLA',
+    birthDate: '2000-01-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    instagram: { label: '@usuario', url: 'https://instagram.com/usuario' }, // TODO
+    skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
+    gifUrl: null, // TODO: '/integrantes/pla.gif' una vez que subas el archivo
+  },
+  {
+    name: 'Joel Eis', // TODO: confirmar nombre completo
+    stageName: 'Monxio',
+    birthDate: '2000-01-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    instagram: { label: '@usuario', url: 'https://instagram.com/usuario' }, // TODO
+    skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
+    gifUrl: null, // TODO: '/integrantes/monxio.gif' una vez que subas el archivo
+  },
+  {
+    name: 'Juan Sánchez', // TODO: confirmar nombre completo
+    stageName: 'OWANI',
+    birthDate: '2000-01-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    instagram: { label: '@usuario', url: 'https://instagram.com/usuario' }, // TODO
+    skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
+    gifUrl: null, // TODO: '/integrantes/owani.gif' una vez que subas el archivo
+  },
+]
+
 const BIO = [
   {
     year: '2021 · ORIGEN',
@@ -58,6 +94,21 @@ export default function About() {
         <span className="eyebrow">// ABOUT US</span>
         <h1 className="section-title glow-magenta">La banda</h1>
       </header>
+
+      <section>
+        <h2
+          className="section-title"
+          style={{ fontSize: '1.4rem', marginBottom: '0.5rem' }}
+        >
+          Integrantes
+        </h2>
+
+        <div className="members-grid">
+          {MEMBERS.map((member) => (
+            <MemberCard key={member.name} member={member} />
+          ))}
+        </div>
+      </section>
 
       <BioTimeline entries={BIO} />
 

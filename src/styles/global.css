@@ -435,6 +435,139 @@ h3 {
   color: var(--color-text-dim);
 }
 
+/* Integrantes: cartas que se dan vuelta (About) */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+
+.flip-card {
+  height: 360px;
+  perspective: 1200px;
+  cursor: pointer;
+  outline: none;
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card--flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card:focus-visible .flip-card__face {
+  border-color: var(--color-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.flip-card__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: rgba(10, 8, 24, 0.6);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flip-card:hover .flip-card__face--front {
+  border-color: var(--color-magenta);
+  box-shadow: 0 0 16px rgba(255, 46, 230, 0.3);
+}
+
+.flip-card__face--back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  text-align: center;
+  padding: var(--space-2);
+}
+
+.flip-card__media {
+  position: absolute;
+  inset: 0;
+}
+
+.flip-card__gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.flip-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-magenta), var(--color-cyan));
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-bg);
+}
+
+.flip-card__front-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-2);
+  background: linear-gradient(to top, rgba(5, 4, 12, 0.92), rgba(5, 4, 12, 0));
+  text-align: center;
+}
+
+.flip-card__front-name {
+  font-family: var(--font-heading);
+  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.flip-card__hint {
+  margin-top: 0.3em;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-cyan-soft);
+}
+
+.flip-card__back-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-magenta-soft);
+  text-shadow: var(--glow-magenta);
+}
+
+.flip-card__back-age {
+  font-size: 0.9rem;
+  color: var(--color-cyan-soft);
+}
+
+.flip-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  justify-content: center;
+}
+
+.flip-card__skill {
+  font-size: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.3em 0.8em;
+  color: var(--color-text-dim);
+}
+
 /* Galería de fotos (Formato en vivo) */
 .gallery-grid {
   display: grid;
@@ -749,5 +882,9 @@ h3 {
 
   .lightbox__arrow--next {
     right: var(--space-1);
+  }
+
+  .flip-card {
+    height: 300px;
   }
 }

@@ -18,7 +18,7 @@ export default function FormatoEnVivo() {
 
       <header className="page-shell__header">
         <span className="eyebrow">// FORMATO EN VIVO</span>
-        <h1 className="section-title glow-cyan">Shows</h1>
+        <h1 className="section-title glow-cyan">Fotos y Videos</h1>
       </header>
 
       {PHOTOS.length > 0 && (
