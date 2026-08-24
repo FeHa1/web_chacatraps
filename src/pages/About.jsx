@@ -17,26 +17,26 @@ import MemberCard from '../components/MemberCard.jsx'
  */
 const MEMBERS = [
   {
-    name: 'Martín Pla', // TODO: confirmar nombre completo
+    name: 'Martin Pla Filippelli', // TODO: confirmar nombre completo
     stageName: 'PLA',
-    birthDate: '2000-01-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
-    instagram: { label: '@usuario', url: 'https://instagram.com/usuario' }, // TODO
+    birthDate: '1994-06-18', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    instagram: { label: '@plaxorelaxo', url: 'https://www.instagram.com/plaxorelaxo/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
     gifUrl: null, // TODO: '/integrantes/pla.gif' una vez que subas el archivo
   },
   {
-    name: 'Joel Eis', // TODO: confirmar nombre completo
-    stageName: 'Monxio',
-    birthDate: '2000-01-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
-    instagram: { label: '@usuario', url: 'https://instagram.com/usuario' }, // TODO
+    name: 'Joel Eis Gonzalez Farkas', // TODO: confirmar nombre completo
+    stageName: 'MONXI0',
+    birthDate: '1993-09-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    instagram: { label: '@monxi0', url: 'https://www.instagram.com/monxi0/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
     gifUrl: null, // TODO: '/integrantes/monxio.gif' una vez que subas el archivo
   },
   {
-    name: 'Juan Sánchez', // TODO: confirmar nombre completo
-    stageName: 'OWANI',
-    birthDate: '2000-01-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
-    instagram: { label: '@usuario', url: 'https://instagram.com/usuario' }, // TODO
+    name: 'Juan Ignacio Sánchez', // TODO: confirmar nombre completo
+    stageName: 'JUANI',
+    birthDate: '1991-09-27', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    instagram: { label: '@juanetesanchez', url: 'https://www.instagram.com/juanetesanchez/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
     gifUrl: null, // TODO: '/integrantes/owani.gif' una vez que subas el archivo
   },
