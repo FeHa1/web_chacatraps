@@ -23,8 +23,19 @@ export default function Home() {
       transition={{ duration: 0.4 }}
     >
       <div>
-        {/* Placeholder de prueba: si no convence, sacar este <img> y listo. */}
-        <img className="home-logo-gif" src="/home/chacatraps.gif" alt="" />
+        <div className="boot-log" aria-hidden="true">
+          <p>establishing uplink...</p>
+          <p>connection established</p>
+          <p>access granted — welcome</p>
+        </div>
+
+        <div className="glitch-logo">
+          <img src="/home/chacatraps.gif" alt="Los Chacatraps" />
+          <span className="glitch-logo__layer glitch-logo__layer--red" aria-hidden="true" />
+          <span className="glitch-logo__layer glitch-logo__layer--cyan" aria-hidden="true" />
+          <span className="glitch-logo__layer glitch-logo__layer--yellow" aria-hidden="true" />
+        </div>
+
         <h1 className="home-title">LOS CHACATRAPS</h1>
         <p className="home-subtitle">PRESS START</p>
       </div>

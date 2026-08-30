@@ -8,13 +8,17 @@ import Discografia from './pages/Discografia.jsx'
 import Videoclips from './pages/Videoclips.jsx'
 import NotFound from './pages/NotFound.jsx'
 import ScanlinesOverlay from './components/ScanlinesOverlay.jsx'
+import MonitorBanner from './components/MonitorBanner.jsx'
+import BootOverlay from './components/BootOverlay.jsx'
 
 export default function App() {
   const location = useLocation()
 
   return (
     <>
+      <MonitorBanner />
       <ScanlinesOverlay />
+      <BootOverlay />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
