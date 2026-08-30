@@ -3,41 +3,30 @@ import BackToMenu from '../components/BackToMenu.jsx'
 import BioTimeline from '../components/BioTimeline.jsx'
 import MemberCard from '../components/MemberCard.jsx'
 
-/**
- * Integrantes — se muestran como cartas que se dan vuelta al tocarlas
- * (frente: GIF + nombre / dorso: nombre completo, edad, habilidades e
- * Instagram). Para agregar el GIF de cada uno:
- *   1. Poné el archivo .gif en la carpeta public/integrantes/
- *      (crear la carpeta si todavía no existe).
- *   2. Completá "gifUrl" acá abajo con "/integrantes/nombre-del-archivo.gif".
- * Mientras no haya GIF, la carta muestra un círculo con la inicial.
- *
- * La edad se calcula sola a partir de "birthDate" (formato YYYY-MM-DD), así
- * que una vez que la cargues correctamente nunca más hay que tocarla.
- */
+
 const MEMBERS = [
   {
     name: 'Martin Pla Filippelli', // TODO: confirmar nombre completo
     stageName: 'PLA',
     //birthDate: '1994-06-18', // ahora no quieren la edad
-    instagram: { label: '@plaxorelaxo', url: 'https://www.instagram.com/plaxorelaxo/' }, // TODO
-    skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
+    instagram: { label: '@plaxorelaxo', url: 'https://www.instagram.com/plaxorelaxo/' }, 
+    skills: ['productor', 'performer', 'instrumentista'], // TODO
     gifUrl: '/integrantes/pla.gif', 
   },
   {
     name: 'Joel Eis Gonzalez Farkas', // TODO: confirmar nombre completo
     stageName: 'MONXI0',
     //birthDate: '1993-09-01', // ahora no quieren la edad
-    instagram: { label: '@monxi0', url: 'https://www.instagram.com/monxi0/' }, // TODO
-    skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
+    instagram: { label: '@monxi0', url: 'https://www.instagram.com/monxi0/' }, 
+    skills: ['cantante', 'performer', 'letrista'], // TODO
     gifUrl: '/integrantes/monxi0.gif', 
   },
   {
     name: 'Juan Ignacio Sánchez', // TODO: confirmar nombre completo
     stageName: 'JUANI',
     //birthDate: '1991-09-27', // ahora no quieren la edad
-    instagram: { label: '@juanetesanchez', url: 'https://www.instagram.com/juanetesanchez/' }, // TODO
-    skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
+    instagram: { label: '@juanetesanchez', url: 'https://www.instagram.com/juanetesanchez/' }, 
+    skills: ['productor', 'vientista', 'arreglista'], // TODO 
     gifUrl: '/integrantes/juani.gif', 
   },
 ]
