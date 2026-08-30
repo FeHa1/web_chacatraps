@@ -19,26 +19,26 @@ const MEMBERS = [
   {
     name: 'Martin Pla Filippelli', // TODO: confirmar nombre completo
     stageName: 'PLA',
-    birthDate: '1994-06-18', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    //birthDate: '1994-06-18', // ahora no quieren la edad
     instagram: { label: '@plaxorelaxo', url: 'https://www.instagram.com/plaxorelaxo/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
-    gifUrl: '/integrantes/pla.gif', // TODO: '/integrantes/pla.gif' una vez que subas el archivo
+    gifUrl: '/integrantes/pla.gif', 
   },
   {
     name: 'Joel Eis Gonzalez Farkas', // TODO: confirmar nombre completo
     stageName: 'MONXI0',
-    birthDate: '1993-09-01', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    //birthDate: '1993-09-01', // ahora no quieren la edad
     instagram: { label: '@monxi0', url: 'https://www.instagram.com/monxi0/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
-    gifUrl: '/integrantes/monxi0.gif', // TODO: '/integrantes/monxio.gif' una vez que subas el archivo
+    gifUrl: '/integrantes/monxi0.gif', 
   },
   {
     name: 'Juan Ignacio Sánchez', // TODO: confirmar nombre completo
     stageName: 'JUANI',
-    birthDate: '1991-09-27', // TODO: reemplazar por la fecha de nacimiento real (YYYY-MM-DD)
+    //birthDate: '1991-09-27', // ahora no quieren la edad
     instagram: { label: '@juanetesanchez', url: 'https://www.instagram.com/juanetesanchez/' }, // TODO
     skills: ['Habilidad 1', 'Habilidad 2', 'Habilidad 3'], // TODO
-    gifUrl: '/integrantes/juani.gif', // TODO: '/integrantes/owani.gif' una vez que subas el archivo
+    gifUrl: '/integrantes/juani.gif', 
   },
 ]
 
