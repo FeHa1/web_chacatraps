@@ -940,6 +940,12 @@ h3 {
   gap: var(--space-3);
 }
 
+.embed-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
 .video-embed {
   position: relative;
   width: 100%;
