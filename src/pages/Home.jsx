@@ -38,7 +38,7 @@ export default function Home() {
         </div>
 
         <h1 className="home-title">LOS CHACATRAPS</h1>
-        <p className="home-subtitle">PRESS START</p>
+        <p className="home-subtitle">MENU</p>
       </div>
 
       <nav className="home-menu" aria-label="Menú principal">
