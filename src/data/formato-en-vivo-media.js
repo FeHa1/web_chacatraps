@@ -35,7 +35,8 @@ import photo07 from '../assets/FormatoEnVivo/photo-07.jpg'
 import photo08 from '../assets/FormatoEnVivo/photo-08.jpg'
 
 import video01 from '../assets/FormatoEnVivo/video-01.mp4'
+import offlineV1 from '../assets/FormatoEnVivo/OFFLINEV1.mp4'
 
 export const PHOTOS = [photo01, photo02, photo03, photo04, photo05, photo06, photo07, photo08]
 
-export const VIDEOS = [video01]
+export const VIDEOS = [video01, offlineV1]

@@ -21,6 +21,14 @@ export default function FormatoEnVivo() {
         <h1 className="section-title glow-cyan">Fotos y Videos</h1>
       </header>
 
+      {VIDEOS.length > 0 && (
+        <div className="video-native-grid">
+          {VIDEOS.map((video) => (
+            <video key={video} className="video-native" src={video} controls playsInline />
+          ))}
+        </div>
+      )}
+
       {PHOTOS.length > 0 && (
         <div className="gallery-grid">
           {PHOTOS.map((photo, i) => (
@@ -33,14 +41,6 @@ export default function FormatoEnVivo() {
             >
               <img className="gallery-photo__img" src={photo} alt="" loading="lazy" />
             </button>
-          ))}
-        </div>
-      )}
-
-      {VIDEOS.length > 0 && (
-        <div className="video-native-grid">
-          {VIDEOS.map((video) => (
-            <video key={video} className="video-native" src={video} controls playsInline />
           ))}
         </div>
       )}
