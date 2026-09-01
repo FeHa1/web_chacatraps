@@ -43,20 +43,22 @@ export default function Discografia() {
           />
         </div>
 
-        {SPOTIFY_ALBUM_EMBEDS.map((src, i) => (
-          <div className="embed-wrap" key={src}>
-            <iframe
-              title={`Álbum ${i + 1} de Los Chacatraps en Spotify`}
-              src={src}
-              width="100%"
-              height="352"
-              style={{ display: 'block' }}
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            />
-          </div>
-        ))}
+        <div className="embed-grid embed-grid--compact">
+          {SPOTIFY_ALBUM_EMBEDS.map((src, i) => (
+            <div className="embed-wrap" key={src}>
+              <iframe
+                title={`Álbum ${i + 1} de Los Chacatraps en Spotify`}
+                src={src}
+                width="100%"
+                height="152"
+                style={{ display: 'block' }}
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </PageShell>
   )

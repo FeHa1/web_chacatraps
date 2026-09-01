@@ -946,6 +946,12 @@ h3 {
   gap: var(--space-3);
 }
 
+/* Fila de álbumes compactos (player de Spotify de 152px de alto).
+   3 columnas en desktop, baja a 2 / 1 según el ancho disponible. */
+.embed-grid--compact {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
 .video-embed {
   position: relative;
   width: 100%;
