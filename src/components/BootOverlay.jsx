@@ -8,6 +8,7 @@ const SECTION_LABELS = {
   '/': 'home.sys',
   '/about': 'about.sys',
   '/formato_en_vivo': 'live_format.sys',
+  '/acusticos': 'acoustic.sys',
   '/discografia': 'discography.sys',
   '/videoclips': 'videoclips.sys',
 }

@@ -17,3 +17,6 @@ yarn-error.log*
 # Env
 .env
 .env.local
+
+# Backups locales de videos sin comprimir (no se suben al repo)
+src/assets/**/orig/

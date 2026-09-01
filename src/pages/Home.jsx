@@ -7,6 +7,7 @@ import MenuOption from '../components/MenuOption.jsx'
 const MENU_ITEMS = [
   { to: '/about', label: 'ABOUT US' },
   { to: '/formato_en_vivo', label: 'FORMATO EN VIVO' },
+  { to: '/acusticos', label: 'ACUSTICOS' },
   { to: '/discografia', label: 'DISCOGRAFIA' },
   { to: '/videoclips', label: 'VIDEOCLIPS' },
 ]
