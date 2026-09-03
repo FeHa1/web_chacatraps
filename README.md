@@ -27,5 +27,5 @@ src/
 
 En el desarrollo de esta landing participaron las siguientes personas.
 
-* Salome Cabrera en el diseño.
+* [Salome Cabrera](https://www.linkedin.com/in/salom%C3%A9-cabrera-1b0928233/) en el diseño.
 * [Federico Hayes](https://github.com/FeHa1) en el desarrollo.
