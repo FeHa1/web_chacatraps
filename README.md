@@ -1,6 +1,6 @@
 # Los Chacatraps — Sitio oficial
 
-Landing interactiva estilo videojuego (estética neon/synthwave) hecha con React + Vite.
+Landing interactiva estilo videojuego  hecha con React + Vite para la banda argentina Chacatraps. 
 
 ## Desarrollo local
 
@@ -10,23 +10,6 @@ npm run dev
 ```
 
 Abre http://localhost:5173
-
-## Build de producción
-
-```bash
-npm run build
-npm run preview   # para probar el build localmente
-```
-
-## Deploy en Netlify
-
-1. Conectar este repositorio en Netlify.
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-
-(Esto ya está configurado en `netlify.toml`, incluyendo el redirect necesario
-para que las rutas de React Router — `/about`, `/discografia`, etc. — no den
-404 al refrescar la página o entrar directamente por URL.)
 
 ## Estructura del proyecto
 
@@ -39,23 +22,10 @@ src/
   styles/global.css ← Todos los estilos del sitio (colores, fuentes, glow)
 ```
 
-## Actualizar contenido (sin tocar código)
 
-- **Fotos y video de shows en vivo**: poner el archivo en
-  `src/assets/FormatoEnVivo/` y agregarlo en `src/data/formato-en-vivo-media.js`
-  (instrucciones paso a paso en el comentario de arriba de ese archivo).
-- **Videoclips**: editar `src/data/videoclips-data.js`.
-- **Discografía (Spotify)**: cambiar el link `SPOTIFY_EMBED_URL` en
-  `src/pages/Discografia.jsx`.
-- **Biografía**: editar el array `BIO` en `src/pages/About.jsx`.
-- **Contacto**: editar el array `CONTACT` en `src/pages/About.jsx`.
+## Desarrollo
 
-## Notas
+En el desarrollo de esta landing participaron las siguientes personas.
 
-- `public/favicon.svg` y `public/og-image.svg` son placeholders — reemplazar
-  por el logo/arte real de la banda cuando esté disponible. Para máxima
-  compatibilidad al compartir el link (WhatsApp, Facebook, etc.), lo ideal es
-  reemplazar `og-image.svg` por un `.png` o `.jpg` de 1200x630px y actualizar
-  las referencias en `index.html`.
-- El sonido de "beep" del menú se genera con Web Audio API (no requiere
-  archivos de audio). Ver `src/hooks/useBeepSound.js`.
+* Salome Cabrera en el diseño.
+* [Federico Hayes](https://github.com/FeHa1) en el desarrollo.
