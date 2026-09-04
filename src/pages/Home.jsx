@@ -55,7 +55,7 @@ export default function Home() {
         ))}
       </nav>
 
-      <p className="home-footer">© {new Date().getFullYear()} LOS CHACATRAPS</p>
+      <p className="home-footer">© {new Date().getFullYear()} CHACATRAP</p>
     </motion.div>
   )
 }
