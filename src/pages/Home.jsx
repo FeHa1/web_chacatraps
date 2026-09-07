@@ -37,7 +37,7 @@ export default function Home() {
           <span className="glitch-logo__layer glitch-logo__layer--yellow" aria-hidden="true" />
         </div>
 
-        <h1 className="home-title">LOS CHACATRAPS</h1>
+        <h1 className="home-title">CHACATRAP</h1>
         <p className="home-subtitle">MENU</p>
       </div>
 
