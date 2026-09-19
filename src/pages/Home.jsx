@@ -30,13 +30,6 @@ export default function Home() {
           <p>access granted — welcome</p>
         </div>
 
-        <div className="glitch-logo">
-          <img src="/home/chacatraps.gif" alt="Los Chacatraps" />
-          <span className="glitch-logo__layer glitch-logo__layer--red" aria-hidden="true" />
-          <span className="glitch-logo__layer glitch-logo__layer--cyan" aria-hidden="true" />
-          <span className="glitch-logo__layer glitch-logo__layer--yellow" aria-hidden="true" />
-        </div>
-
         <h1 className="home-title">CHACATRAP</h1>
         <p className="home-subtitle">MENU</p>
       </div>
