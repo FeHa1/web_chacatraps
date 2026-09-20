@@ -1,62 +1,43 @@
-import { useCallback, useRef } from 'react'
+import { useCallback } from 'react'
+
+// Sonidos de la interfaz (archivos en public/sound/). Para cambiar un sonido,
+// reemplazar el archivo o ajustar la ruta/volumen acá.
+const HOVER_SRC = '/sound/sonidoBombo.mp3'
+const SELECT_SRC = '/sound/rimshot.mp3'
+const HOVER_VOLUME = 0.6
+const SELECT_VOLUME = 1
+
+// Los <audio> viven a nivel de módulo (no del componente) para que el sonido de
+// selección no se corte cuando la navegación desmonta la página, y para que
+// todos los componentes compartan el mismo archivo ya cargado.
+const audioCache = {}
+
+function getAudio(src, volume) {
+  if (!audioCache[src]) {
+    const audio = new Audio(src)
+    audio.preload = 'auto'
+    audio.volume = volume
+    audioCache[src] = audio
+  }
+  return audioCache[src]
+}
+
+function play(src, volume) {
+  const audio = getAudio(src, volume)
+  audio.currentTime = 0
+  // Los navegadores rechazan play() antes de la primera interacción del
+  // usuario; en ese caso simplemente no suena.
+  audio.play().catch(() => {})
+}
 
 /**
- * Genera efectos de sonido "synth beep" cortos con Web Audio API.
- * No requiere archivos de audio externos.
- *
- * Si en el futuro se consigue un sample de audio real (ej. beep.mp3),
- * se puede reemplazar este hook por un <audio> simple sin tocar los
- * componentes que lo usan (mismo playHover / playSelect).
+ * Efectos de sonido de la interfaz.
+ * - playHover: al desplazarse por las opciones (sonidoBombo.mp3)
+ * - playSelect: al seleccionar/clickear algo (rimshot.mp3)
  */
 export default function useBeepSound() {
-  const ctxRef = useRef(null)
-
-  const getContext = useCallback(() => {
-    if (!ctxRef.current) {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext
-      if (!AudioContextClass) return null
-      ctxRef.current = new AudioContextClass()
-    }
-    // Los navegadores suspenden el audio hasta la primera interacción del usuario
-    if (ctxRef.current.state === 'suspended') {
-      ctxRef.current.resume()
-    }
-    return ctxRef.current
-  }, [])
-
-  const playTone = useCallback(
-    ({ frequency = 880, duration = 0.08, type = 'square', gain = 0.05 }) => {
-      const ctx = getContext()
-      if (!ctx) return
-
-      const oscillator = ctx.createOscillator()
-      const gainNode = ctx.createGain()
-
-      oscillator.type = type
-      oscillator.frequency.setValueAtTime(frequency, ctx.currentTime)
-
-      gainNode.gain.setValueAtTime(gain, ctx.currentTime)
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration)
-
-      oscillator.connect(gainNode)
-      gainNode.connect(ctx.destination)
-
-      oscillator.start(ctx.currentTime)
-      oscillator.stop(ctx.currentTime + duration)
-    },
-    [getContext],
-  )
-
-  // Beep agudo y corto para hover (sutil)
-  const playHover = useCallback(() => {
-    playTone({ frequency: 660, duration: 0.05, type: 'square', gain: 0.035 })
-  }, [playTone])
-
-  // Beep de dos notas para selección/click (confirmación)
-  const playSelect = useCallback(() => {
-    playTone({ frequency: 880, duration: 0.06, type: 'square', gain: 0.05 })
-    setTimeout(() => playTone({ frequency: 1320, duration: 0.09, type: 'square', gain: 0.05 }), 60)
-  }, [playTone])
+  const playHover = useCallback(() => play(HOVER_SRC, HOVER_VOLUME), [])
+  const playSelect = useCallback(() => play(SELECT_SRC, SELECT_VOLUME), [])
 
   return { playHover, playSelect }
 }
