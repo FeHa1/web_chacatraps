@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import useBeepSound from '../hooks/useBeepSound.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 /**
  * Visor de foto a pantalla completa. Se cierra con click afuera, con el
@@ -8,6 +9,7 @@ import useBeepSound from '../hooks/useBeepSound.js'
  */
 export default function Lightbox({ photos, index, onClose, onPrev, onNext }) {
   const { playHover, playSelect } = useBeepSound()
+  const { t } = useLanguage()
   const total = photos.length
 
   useEffect(() => {
@@ -27,7 +29,7 @@ export default function Lightbox({ photos, index, onClose, onPrev, onNext }) {
         className="lightbox__close"
         onClick={onClose}
         onMouseEnter={playHover}
-        aria-label="Cerrar"
+        aria-label={t.common.close}
       >
         ✕
       </button>
@@ -42,7 +44,7 @@ export default function Lightbox({ photos, index, onClose, onPrev, onNext }) {
             onPrev()
           }}
           onMouseEnter={playHover}
-          aria-label="Foto anterior"
+          aria-label={t.live.prevPhoto}
         >
           ‹
         </button>
@@ -65,7 +67,7 @@ export default function Lightbox({ photos, index, onClose, onPrev, onNext }) {
             onNext()
           }}
           onMouseEnter={playHover}
-          aria-label="Foto siguiente"
+          aria-label={t.live.nextPhoto}
         >
           ›
         </button>

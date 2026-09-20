@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import useBeepSound from '../hooks/useBeepSound.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 /**
  * Video a pantalla completa que se abre con el botón START de la home. Se
@@ -8,6 +9,7 @@ import useBeepSound from '../hooks/useBeepSound.js'
  */
 export default function StartVideoModal({ src, onClose }) {
   const { playHover } = useBeepSound()
+  const { t } = useLanguage()
   const [failed, setFailed] = useState(false)
 
   useEffect(() => {
@@ -25,13 +27,13 @@ export default function StartVideoModal({ src, onClose }) {
         className="lightbox__close"
         onClick={onClose}
         onMouseEnter={playHover}
-        aria-label="Cerrar"
+        aria-label={t.common.close}
       >
         ✕
       </button>
 
       {failed ? (
-        <p className="start-video-missing">&gt; video no disponible todavía</p>
+        <p className="start-video-missing">&gt; {t.home.videoUnavailable}</p>
       ) : (
         <video
           className="start-video"

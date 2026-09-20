@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useBeepSound from '../hooks/useBeepSound.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 // Calcula la edad a partir de la fecha de nacimiento (YYYY-MM-DD) usando la
 // fecha actual, así siempre está al día sin tener que actualizarla a mano.
@@ -26,6 +27,7 @@ function calculateAge(birthDateISO) {
 export default function MemberCard({ member }) {
   const [flipped, setFlipped] = useState(false)
   const { playHover, playSelect } = useBeepSound()
+  const { t } = useLanguage()
 
   const toggleFlip = () => {
     setFlipped((prev) => !prev)
@@ -51,7 +53,7 @@ export default function MemberCard({ member }) {
       onKeyDown={handleKeyDown}
       onMouseEnter={playHover}
       aria-pressed={flipped}
-      aria-label={`Ver más sobre ${displayName}`}
+      aria-label={t.about.moreAbout(displayName)}
     >
       <div className="flip-card__inner">
         {/* ---- Frente ---- */}
@@ -65,20 +67,20 @@ export default function MemberCard({ member }) {
           </div>
           <div className="flip-card__front-overlay">
             <div className="flip-card__front-name">{displayName}</div>
-            <div className="flip-card__hint">TOCÁ PARA VER MÁS ▸</div>
+            <div className="flip-card__hint">{t.about.tapForMore}</div>
           </div>
         </div>
 
         {/* ---- Dorso ---- */}
         <div className="flip-card__face flip-card__face--back">
           <div className="flip-card__back-name">{member.name}</div>
-          {age !== null && <div className="flip-card__back-age">{age} años</div>}
+          {age !== null && <div className="flip-card__back-age">{t.about.age(age)}</div>}
 
           {member.skills?.length > 0 && (
             <div className="flip-card__skills">
               {member.skills.map((skill) => (
                 <span className="flip-card__skill" key={skill}>
-                  {skill}
+                  {t.about.skills[skill] ?? skill}
                 </span>
               ))}
             </div>

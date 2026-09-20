@@ -1,5 +1,6 @@
 import PageShell from '../components/PageShell.jsx'
 import BackToMenu from '../components/BackToMenu.jsx'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 // Embed del perfil/artista de la banda en Spotify.
 // Para conseguir el link: en Spotify, "Compartir" -> "Insertar aplicación"
@@ -16,23 +17,25 @@ const SPOTIFY_ALBUM_EMBEDS = [
 ]
 
 export default function Discografia() {
+  const { t } = useLanguage()
+
   return (
     <PageShell>
       <BackToMenu />
 
       <header className="page-shell__header">
-        <span className="eyebrow">// DISCOGRAFIA</span>
-        <h1 className="section-title glow-magenta">Escuchanos</h1>
+        <span className="eyebrow">// {t.menu.discography}</span>
+        <h1 className="section-title glow-magenta">{t.discography.title}</h1>
       </header>
 
       <p className="prose">
-        Todo nuestro catálogo, en vivo desde Spotify.
+        {t.discography.intro}
       </p>
 
       <div className="embed-stack">
         <div className="embed-wrap">
           <iframe
-            title="Los Chacatraps en Spotify"
+            title={t.discography.artistEmbedTitle}
             src={SPOTIFY_ARTIST_EMBED}
             width="100%"
             height="352"
@@ -47,7 +50,7 @@ export default function Discografia() {
           {SPOTIFY_ALBUM_EMBEDS.map((src, i) => (
             <div className="embed-wrap" key={src}>
               <iframe
-                title={`Álbum ${i + 1} de Los Chacatraps en Spotify`}
+                title={t.discography.albumEmbedTitle(i + 1)}
                 src={src}
                 width="100%"
                 height="152"

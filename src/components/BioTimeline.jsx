@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import useBeepSound from '../hooks/useBeepSound.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const variants = {
   enter: (direction) => ({ opacity: 0, x: direction > 0 ? 40 : -40 }),
@@ -17,6 +18,7 @@ export default function BioTimeline({ entries }) {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const { playHover, playSelect } = useBeepSound()
+  const { t } = useLanguage()
 
   const total = entries.length
   const current = entries[index]
@@ -42,7 +44,7 @@ export default function BioTimeline({ entries }) {
           onClick={() => goTo(index - 1)}
           onMouseEnter={playHover}
           disabled={index === 0}
-          aria-label="Capítulo anterior"
+          aria-label={t.about.prevChapter}
         >
           ‹
         </button>
@@ -70,7 +72,7 @@ export default function BioTimeline({ entries }) {
           onClick={() => goTo(index + 1)}
           onMouseEnter={playHover}
           disabled={index === total - 1}
-          aria-label="Capítulo siguiente"
+          aria-label={t.about.nextChapter}
         >
           ›
         </button>
@@ -83,7 +85,7 @@ export default function BioTimeline({ entries }) {
             type="button"
             className={`bio-timeline__dot ${i === index ? 'bio-timeline__dot--active' : ''}`}
             onClick={() => goTo(i)}
-            aria-label={`Ir a ${entry.year}`}
+            aria-label={t.about.goTo(entry.year)}
           />
         ))}
       </div>

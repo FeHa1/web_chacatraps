@@ -3,9 +3,11 @@ import PageShell from '../components/PageShell.jsx'
 import BackToMenu from '../components/BackToMenu.jsx'
 import Lightbox from '../components/Lightbox.jsx'
 import { PHOTOS, VIDEOS } from '../data/formato-en-vivo-media.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function FormatoEnVivo() {
   const [openIndex, setOpenIndex] = useState(null)
+  const { t } = useLanguage()
 
   const openAt = (index) => setOpenIndex(index)
   const close = () => setOpenIndex(null)
@@ -17,8 +19,8 @@ export default function FormatoEnVivo() {
       <BackToMenu />
 
       <header className="page-shell__header">
-        <span className="eyebrow">// FORMATO EN VIVO</span>
-        <h1 className="section-title glow-cyan">Fotos y Videos</h1>
+        <span className="eyebrow">// {t.menu.live}</span>
+        <h1 className="section-title glow-cyan">{t.live.title}</h1>
       </header>
 
       {VIDEOS.length > 0 && (
@@ -37,7 +39,7 @@ export default function FormatoEnVivo() {
               className="gallery-photo"
               key={photo}
               onClick={() => openAt(i)}
-              aria-label={`Ver foto ${i + 1}`}
+              aria-label={t.live.viewPhoto(i + 1)}
             >
               <img className="gallery-photo__img" src={photo} alt="" loading="lazy" />
             </button>
@@ -46,7 +48,7 @@ export default function FormatoEnVivo() {
       )}
 
       {PHOTOS.length === 0 && VIDEOS.length === 0 && (
-        <p className="gallery-empty">Próximamente: fotos y videos de nuestros shows en vivo.</p>
+        <p className="gallery-empty">{t.live.empty}</p>
       )}
 
       {openIndex !== null && (

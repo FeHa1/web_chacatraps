@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import useBeepSound from '../hooks/useBeepSound.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function NotFound() {
   const { playHover, playSelect } = useBeepSound()
+  const { t } = useLanguage()
 
   return (
     <motion.div
@@ -16,7 +18,7 @@ export default function NotFound() {
       <h1 className="glitch-text" data-text="SIGNAL LOST">
         SIGNAL LOST
       </h1>
-      <p className="notfound-code">ERROR 404 — FRECUENCIA NO ENCONTRADA</p>
+      <p className="notfound-code">{t.notFound.code}</p>
       <Link
         to="/"
         className="back-to-menu"
@@ -24,7 +26,7 @@ export default function NotFound() {
         onMouseEnter={playHover}
         onClick={playSelect}
       >
-        &lt;&lt; VOLVER AL MENU
+        &lt;&lt; {t.notFound.back}
       </Link>
     </motion.div>
   )
