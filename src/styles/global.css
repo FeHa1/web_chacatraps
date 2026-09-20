@@ -237,35 +237,13 @@ h3 {
   animation: rec-blink 0.6s steps(1) infinite;
 }
 
-/* Scanlines CRT marcadas + vignette + curvatura simulada */
+/* Vignette CRT (bordes oscuros). Las scanlines horizontales se quitaron a
+   pedido; el nombre de la clase quedó por compatibilidad. */
 .scanlines-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 50;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.35) 0px,
-    rgba(0, 0, 0, 0.35) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  animation: scanline-flicker 7s infinite;
-}
-
-.scanlines-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 255, 65, 0.04),
-    rgba(0, 255, 65, 0.04) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  mix-blend-mode: screen;
-  animation: scanline-scroll 9s linear infinite;
 }
 
 .scanlines-overlay::after {
@@ -274,29 +252,6 @@ h3 {
   inset: -4%;
   border-radius: 50% / 8%;
   box-shadow: inset 0 0 12vw 4vw rgba(0, 0, 0, 0.85), inset 0 0 3vw 1vw rgba(0, 0, 0, 0.6);
-}
-
-@keyframes scanline-scroll {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100px);
-  }
-}
-
-@keyframes scanline-flicker {
-  0%,
-  93%,
-  100% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 0.75;
-  }
-  96% {
-    opacity: 0.95;
-  }
 }
 
 @keyframes crt-flicker {
@@ -356,11 +311,27 @@ h3 {
   animation: flicker 5s infinite ease-in-out;
 }
 
-.home-subtitle {
+.home-start {
+  display: inline-block;
+  margin-top: var(--space-1);
+  padding: 0.5em 1.6em;
+  background: transparent;
+  border: 1px solid var(--color-green);
+  color: var(--color-green);
   font-family: var(--font-body);
-  font-size: clamp(0.7rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 2.4vw, 1.2rem);
   letter-spacing: 0.4em;
-  color: var(--color-text-dim);
+  text-shadow: var(--glow-green);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.home-start:hover,
+.home-start:focus-visible {
+  color: var(--color-bg);
+  background: var(--color-green);
+  text-shadow: none;
+  outline: none;
 }
 
 .home-menu {
@@ -863,6 +834,21 @@ h3 {
   transform: translateX(-50%);
   font-family: var(--font-heading);
   font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+}
+
+/* Video de la pantalla de inicio (botón START) */
+.start-video {
+  max-width: min(94vw, 1200px);
+  max-height: 85vh;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--glow-green);
+  background: #000;
+}
+
+.start-video-missing {
+  font-family: var(--font-body);
   letter-spacing: 0.1em;
   color: var(--color-text-dim);
 }

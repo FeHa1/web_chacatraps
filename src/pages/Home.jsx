@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import MenuOption from '../components/MenuOption.jsx'
+import StartVideoModal from '../components/StartVideoModal.jsx'
+import useBeepSound from '../hooks/useBeepSound.js'
+
+// Video que se muestra al apretar START. Para cambiarlo: poner el archivo en
+// public/home/ y ajustar esta ruta (se sirve desde la raíz, sin "public").
+const START_VIDEO_SRC = '/home/start-video.mp4'
 
 // Opciones del menú principal. Para agregar/quitar una opción del menú,
 // solo hay que editar este array (no hace falta tocar el JSX de abajo).
@@ -14,6 +20,8 @@ const MENU_ITEMS = [
 
 export default function Home() {
   const [activeItem, setActiveItem] = useState(null)
+  const [videoOpen, setVideoOpen] = useState(false)
+  const { playHover, playSelect } = useBeepSound()
 
   return (
     <motion.div
@@ -31,7 +39,17 @@ export default function Home() {
         </div>
 
         <h1 className="home-title">CHACATRAP</h1>
-        <p className="home-subtitle">MENU</p>
+        <button
+          type="button"
+          className="home-start"
+          onClick={() => {
+            playSelect()
+            setVideoOpen(true)
+          }}
+          onMouseEnter={playHover}
+        >
+          START
+        </button>
       </div>
 
       <nav className="home-menu" aria-label="Menú principal">
@@ -47,6 +65,10 @@ export default function Home() {
           />
         ))}
       </nav>
+
+      {videoOpen && (
+        <StartVideoModal src={START_VIDEO_SRC} onClose={() => setVideoOpen(false)} />
+      )}
 
       <p className="home-footer">© {new Date().getFullYear()} CHACATRAP</p>
     </motion.div>
