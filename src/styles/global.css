@@ -384,6 +384,26 @@ h3 {
   letter-spacing: 0.05em;
 }
 
+.home-footer p {
+  margin: 0;
+}
+
+.home-footer p + p {
+  margin-top: 0.3em;
+}
+
+.home-footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.home-footer a:hover,
+.home-footer a:focus-visible {
+  color: var(--color-green);
+  text-shadow: var(--glow-green);
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;

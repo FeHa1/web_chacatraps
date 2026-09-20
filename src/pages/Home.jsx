@@ -70,7 +70,15 @@ export default function Home() {
         <StartVideoModal src={START_VIDEO_SRC} onClose={() => setVideoOpen(false)} />
       )}
 
-      <p className="home-footer">© {new Date().getFullYear()} CHACATRAP</p>
+      <footer className="home-footer">
+        <p>© {new Date().getFullYear()} CHACATRAP</p>
+        <p>
+          build by{' '}
+          <a href="https://github.com/FeHa1" target="_blank" rel="noopener noreferrer">
+            FeHa1
+          </a>
+        </p>
+      </footer>
     </motion.div>
   )
 }
