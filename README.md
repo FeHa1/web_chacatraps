@@ -1,6 +1,7 @@
 # Los Chacatraps — Sitio oficial
 
 Landing interactiva estilo videojuego  hecha con React + Vite para la banda argentina Chacatraps. 
+Se puede visitar en: https://chacatraps-one.vercel.app/
 
 ## Desarrollo local
 
